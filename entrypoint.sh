@@ -15,7 +15,7 @@ else
     result=$(/usr/bin/wget -qO- "$URL" | /usr/bin/jq -r "$FILTER")
 fi
 
-echo "AAA"
+echo $URL
 echo $(/usr/bin/wget --no-check-certificate -qO- "$URL")
 
 if [ "$EXPECTED" != "$result" ]; then 
