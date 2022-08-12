@@ -26,6 +26,9 @@ inputs:
     description: 'Skip certification validation'
     required: false
     default: false
+  protocol:
+    required: true
+    default: 'https'
 outputs:
   result:
     description: 'Result of check'
@@ -38,4 +41,5 @@ runs:
     - ${{ inputs.filter }}
     - ${{ inputs.expected }}
     - ${{ inputs.unsecure }}
+    - ${{ inputs.protocol }}
 
