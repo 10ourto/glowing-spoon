@@ -15,6 +15,7 @@ else
     result=$(/usr/bin/wget -qO- "$URL" | /usr/bin/jq -r "$FILTER")
 fi
 
+echo $result
 
 if [ "$EXPECTED" != "$result" ]; then 
     echo "Expected: ${EXPECTED} ; Get: ${result}" 
