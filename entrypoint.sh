@@ -6,8 +6,9 @@ PATH=$2
 FILTER=$3
 EXPECTED=$4
 UNSECURE=$5
+PROTOCOL=$6
 
-URL="https://${HOSTNAME}${PATH}"
+URL="${PROTOCOL}://${HOSTNAME}${PATH}"
 
 if $UNSECURE; then
     result=$(/usr/bin/wget --no-check-certificate -qO- "$URL" | /usr/bin/jq -r "$FILTER")
